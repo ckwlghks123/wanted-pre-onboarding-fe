@@ -12,7 +12,7 @@ import {
 } from 'react-icons/bs';
 
 const Feed = ({
-  id,
+  feedId,
   userId,
   profile,
   feedImage,
@@ -27,9 +27,9 @@ const Feed = ({
   const onSubmit = (e) => {
     e.preventDefault();
     const { value } = commentRef.current.value;
-    if (!value.trim()) return;
+    if (!value) return;
 
-    regComment(value);
+    regComment(feedId, value);
     commentRef.current.value = '';
   };
 
@@ -47,7 +47,7 @@ const Feed = ({
     <Wrapper>
       <UserWrapper>
         <ProfileImage src={profile} />
-        <UserId>{/*userId*/}dkdldldldl</UserId>
+        <UserId>{userId}</UserId>
         <BsThreeDots />
       </UserWrapper>
       <FeedWrapper>
@@ -64,14 +64,14 @@ const Feed = ({
             <BsBookmark size="25" />
           </RightIcon>
         </IconWrap>
-        <Like>좋아요{/*likes*/} 123개</Like>
+        <Like>좋아요 {likes}</Like>
       </FeedWrapper>
       <CommentsWrap>
         {/* {comments.map(({ id, userId, comment }) => (
           <Comment key={id} userId={userId} comment={comment} />
         ))} */}
       </CommentsWrap>
-      <SubmitComment>
+      <SubmitComment onSubmit={onSubmit}>
         <BsEmojiSmile size="25" />
         <InputComment ref={commentRef} type="text" placeholder="댓글 달기..." />
         <Button>게시</Button>
@@ -81,14 +81,20 @@ const Feed = ({
 };
 
 const Wrapper = styled.div`
-  max-width: 550px;
-  min-width: 470px;
+  max-width: 500px;
+  min-width: 400px;
   width: 40%;
   border: 1px solid rgba(133, 133, 133, 0.34);
   border-radius: 8px;
   margin-top: 20px;
   display: flex;
   flex-direction: column;
+  background-color: white;
+
+  @media (max-width: 500px) {
+    min-width: 0px;
+    width: 95%;
+  }
 `;
 
 const UserWrapper = styled.div`

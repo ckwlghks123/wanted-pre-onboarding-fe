@@ -17,8 +17,54 @@ const Main = () => {
     };
     dataFetch();
   }, []);
-  console.log(data);
-  return <></>;
+
+  const regComment = (feedId, comment) => {
+    const userId = 'test';
+    const newState = [...data];
+    setData(
+      newState.map((feed) => {
+        return feed.id !== feedId
+          ? feed
+          : {
+              ...feed,
+              comments: [
+                ...feed.comments,
+                { id: feed.comments.length + 1, userId, comment },
+              ],
+            };
+      })
+    );
+  };
+
+  return (
+    <>
+      {isLoading ? (
+        <div>Loading...</div>
+      ) : (
+        <Wrapper>
+          {data.map(({ id, userId, profile, feedImage, likes, comments }) => (
+            <Feed
+              key={id}
+              feedId={id}
+              userId={userId}
+              profile={profile}
+              feedImage={feedImage}
+              likes={likes}
+              comments={comments}
+              regComment={regComment}
+            />
+          ))}
+        </Wrapper>
+      )}
+    </>
+  );
 };
+
+const Wrapper = styled.main`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(211, 211, 211, 0.4);
+`;
 
 export default Main;

@@ -41,7 +41,7 @@ const Nav = styled.nav`
   height: 60px;
   display: flex;
   justify-content: center;
-  background-color: rgba(128, 128, 128, 0.02);
+  background-color: white;
   border-bottom: 1px solid rgba(131, 129, 129, 0.2);
 `;
 
@@ -74,7 +74,7 @@ const SearchBar = styled.input`
   font-size: 15px;
   padding: 10px;
 
-  @media (max-width: 400px) {
+  @media (max-width: 690px) {
     display: none;
   }
 `;
