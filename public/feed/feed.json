@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "userId": "cohsung",
+    "profile": "/feed/profile/cohsung.jpg",
+    "feedImage": "/feed/picture/288096628_1765494177119356_1585139324510878545_n.jpg",
+    "likes": 421,
+    "comments": [
+      {
+        "id": 1,
+        "userId": "cohsung",
+        "comment": "안녕하세요"
+      },
+      {
+        "id": 2,
+        "userId": "stefanianam",
+        "comment": "좋겠네요"
+      },
+      {
+        "id": 3,
+        "userId": "yongil0423",
+        "comment": "우와"
+      },
+      {
+        "id": 4,
+        "userId": "_kihwan",
+        "comment": "굳"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "userId": "stefanianam",
+    "profile": "/feed/profile/stefanianam.jpg",
+    "feedImage": "/feed/picture/287288035_577759413716945_2728033716266129978_n.jpg",
+    "likes": 334,
+    "comments": [
+      {
+        "id": 1,
+        "userId": "cohsung",
+        "comment": "좋아요"
+      },
+      {
+        "id": 2,
+        "userId": "yongil0423",
+        "comment": "이쁩니다"
+      },
+      {
+        "id": 3,
+        "userId": "_kihwan",
+        "comment": "부러워요"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "userId": "yongil0423",
+    "profile": "/feed/profile/yongil0423.jpg",
+    "feedImage": "/feed/picture/289091791_350324857221951_389680844193217087_n.jpg",
+    "likes": 221,
+    "comments": [
+      {
+        "id": 1,
+        "userId": "cohsung",
+        "comment": "좋아요"
+      },
+      {
+        "id": 2,
+        "userId": "stefanianam",
+        "comment": "짱"
+      },
+      {
+        "id": 3,
+        "userId": "_kihwan",
+        "comment": "굳"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "userId": "_kihwan",
+    "profile": "/feed/profile/_kihwan.jpg",
+    "feedImage": "/feed/picture/289236547_492235996004520_3464423738084741870_n.jpg",
+    "likes": 18,
+    "comments": [
+      {
+        "id": 1,
+        "userId": "cohsung",
+        "comment": "멋있어요"
+      },
+      {
+        "id": 2,
+        "userId": "stefanianam",
+        "comment": "이뻐요"
+      }
+    ]
+  }
+]
