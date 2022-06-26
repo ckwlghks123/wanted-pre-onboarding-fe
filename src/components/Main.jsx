@@ -10,17 +10,19 @@ const Main = () => {
   useEffect(() => {
     const dataFetch = async () => {
       const data = await getFetch('/feed/feed.json');
+
       setLoading(false);
-      if (data) {
-        setData(data);
-      }
+
+      if (data) setData(data);
     };
+
     dataFetch();
   }, []);
 
   const regComment = (feedId, comment) => {
     const userId = 'test';
     const newState = [...data];
+
     setData(
       newState.map((feed) => {
         return feed.id !== feedId

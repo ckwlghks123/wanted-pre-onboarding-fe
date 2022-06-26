@@ -25,15 +25,21 @@ const Feed = ({
 
   const onSubmit = (e) => {
     e.preventDefault();
+
     const { value } = commentRef.current;
+
     if (!value) return;
+
     regComment(feedId, value);
+
     commentRef.current.value = '';
   };
 
   useEffect(() => {
     const img = new Image();
+
     img.src = feedImage;
+
     img.onload = (e) => {
       setLoading(false);
     };
