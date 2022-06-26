@@ -15,9 +15,9 @@ export const getUser = () => {
   }
 };
 
-export const logOutUser = (key) => {
+export const logOutUser = () => {
   try {
-    localStorage.removeItem(key);
+    localStorage.removeItem('user');
   } catch (e) {
     alert(e.message);
   }

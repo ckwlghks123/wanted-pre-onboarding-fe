@@ -57,6 +57,8 @@ const LogIn = () => {
 
   const isValid = emailState && passwordState;
 
+  console.log(isValid);
+
   return (
     <Wrapper>
       <InnerWrapper>
@@ -67,7 +69,7 @@ const LogIn = () => {
           {inputs.map((input) => (
             <Input key={input.id} {...input} onChange={onInputCheck} />
           ))}
-          <Button disabled={isValid} valiState={isValid}>
+          <Button disabled={!isValid} valiState={isValid}>
             로그인
           </Button>
         </InputForm>
