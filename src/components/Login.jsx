@@ -55,27 +55,82 @@ const LogIn = () => {
     },
   ];
 
+  const isValid = emailState && passwordState;
+
   return (
-    <div>
-      <span>
-        <img src="https://www.instagram.com/static/images/web/logged_out_wordmark-2x.png/d2529dbef8ed.png" />
-      </span>
-      <form onSubmit={handleSubmit}>
-        {inputs.map((input) => (
-          <Input key={input.id} {...input} onChange={onInputCheck} />
-        ))}
-        <button disabled={!(emailState && passwordState)}>로그인</button>
-      </form>
-    </div>
+    <Wrapper>
+      <InnerWrapper>
+        <LogoWrapper>
+          <Logo src="https://www.instagram.com/static/images/web/logged_out_wordmark-2x.png/d2529dbef8ed.png" />
+        </LogoWrapper>
+        <InputForm onSubmit={handleSubmit}>
+          {inputs.map((input) => (
+            <Input key={input.id} {...input} onChange={onInputCheck} />
+          ))}
+          <Button disabled={isValid} valiState={isValid}>
+            로그인
+          </Button>
+        </InputForm>
+      </InnerWrapper>
+    </Wrapper>
   );
 };
 
 const Input = styled.input`
-  border: 1px solid black;
+  border-radius: 3px;
+  border: 1px solid;
   border-color: ${({ valiState }) => {
-    if (valiState === null || valiState) return 'black';
+    if (valiState === null || valiState) return '#413939ab';
     if (!valiState) return 'red';
-  }}};
+  }};
+  margin-bottom: 7px;
+  height: 40px;
+  outline: none;
+  padding: 5px 10px;
+  font-size: 12px;
 `;
 
-export default Login;
+const Wrapper = styled.div`
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(128, 128, 128, 0.3);
+`;
+
+const InnerWrapper = styled.div`
+  width: 350px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid rgba(128, 128, 128, 0.8);
+  flex-direction: column;
+`;
+
+const LogoWrapper = styled.span`
+  padding: 70px 50px;
+`;
+
+const Logo = styled.img`
+  height: 60px;
+`;
+
+const InputForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  padding: 0 40px;
+  width: 100%;
+`;
+
+const Button = styled.button`
+  background-color: ${({ valiState }) =>
+    valiState ? 'rgb(0, 149, 246)' : 'rgba(0, 149, 246, 0.4)'};
+  border-radius: 5px;
+  height: 30px;
+  color: white;
+  font-weight: 1000;
+  margin-top: 8px;
+  cursor: pointer;
+`;
+export default LogIn;

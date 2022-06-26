@@ -6,9 +6,9 @@ export const setUser = (key, value) => {
   }
 };
 
-export const getUser = (key) => {
+export const getUser = () => {
   try {
-    const userInfo = localStorage.getItem(key);
+    const userInfo = localStorage.getItem('user');
     return userInfo ? userInfo : null;
   } catch (e) {
     return null;
