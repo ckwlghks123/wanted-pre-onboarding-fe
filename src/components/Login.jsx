@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 import { setUser } from '../helper/storeUser';
-import validate from '../helper/validation';
+import validate from '../helper/validate';
 
 const LogIn = () => {
   const inputEmail = useRef();

@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import { getUser } from './helper/storeUser';
 import NavBar from './components/NavBar';
 import Feed from './components/Feed';
+import Main from './components/Main';
 
 function App() {
   const userExists = getUser();
@@ -12,7 +13,7 @@ function App() {
   return (
     <Routes>
       <Route element={!userExists ? <LogIn /> : <NavBar />}>
-        <Route path="/" element={<Feed />} />
+        <Route path="/" element={<Main />} />
       </Route>
     </Routes>
   );

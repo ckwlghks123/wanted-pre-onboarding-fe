@@ -18,20 +18,32 @@ const Feed = ({
   feedImage,
   likes,
   comments,
-  addComment,
+  regComment,
 }) => {
   const commentRef = useRef();
-  const [comment, setComment] = useState('');
+  const [isLoading, setLoading] = useState(true);
+  // const [comment, setComment] = useState('');
 
   const onSubmit = (e) => {
     e.preventDefault();
     const { value } = commentRef.current.value;
+    if (!value.trim()) return;
 
-    if (value.trim()) {
-    }
+    regComment(value);
+    commentRef.current.value = '';
   };
 
-  return (
+  useEffect(() => {
+    const img = new Image();
+    img.src = feedImage;
+    img.onload = (e) => {
+      setLoading(false);
+    };
+  });
+
+  return isLoading ? (
+    <div>Loading...</div>
+  ) : (
     <Wrapper>
       <UserWrapper>
         <ProfileImage src={profile} />
