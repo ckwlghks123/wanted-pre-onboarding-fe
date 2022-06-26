@@ -22,13 +22,11 @@ const Feed = ({
 }) => {
   const commentRef = useRef();
   const [isLoading, setLoading] = useState(true);
-  // const [comment, setComment] = useState('');
 
   const onSubmit = (e) => {
     e.preventDefault();
-    const { value } = commentRef.current.value;
+    const { value } = commentRef.current;
     if (!value) return;
-
     regComment(feedId, value);
     commentRef.current.value = '';
   };
@@ -67,9 +65,9 @@ const Feed = ({
         <Like>좋아요 {likes}</Like>
       </FeedWrapper>
       <CommentsWrap>
-        {/* {comments.map(({ id, userId, comment }) => (
-          <Comment key={id} userId={userId} comment={comment} />
-        ))} */}
+        {comments.map(({ id, userId, comment }) => (
+          <Comment key={id} id={id} userId={userId} comment={comment} />
+        ))}
       </CommentsWrap>
       <SubmitComment onSubmit={onSubmit}>
         <BsEmojiSmile size="25" />

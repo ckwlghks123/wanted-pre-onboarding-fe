@@ -64,6 +64,7 @@ const Wrapper = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 20px;
   background-color: rgba(211, 211, 211, 0.4);
 `;
 
