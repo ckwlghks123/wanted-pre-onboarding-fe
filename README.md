@@ -44,3 +44,6 @@
 ## 배포 주소
 
 https://ji-insta-clone.netlify.app
+
+- 로그인 ID: test1234@test.com
+- 로그인 PW: Test1234!@
